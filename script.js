@@ -12,7 +12,7 @@ function Reynolds() {
     document.getElementById("Nboquillas").value
   );
 
-  const De = NumeroBoquillas * (Areaboquilla / 32);
+  const De = Areaboquilla / 32;
   const DiametroexternoTP = parseFloat(
     document.getElementById("DiametroexternoTP").value
   );
