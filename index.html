@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calculos de presión</title>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="calculos.css" />
+  </head>
+  <body>
+    <main>
+      <section class="Calculo">
+        <ul class="container">
+          <h1 class="Titulo">
+            Calcular número de Reynolds y factor de fricción
+          </h1>
+          <li class="Calculo__items">
+            Densidad (Lbm/Gal)
+            <input
+              type="number"
+              id="Densidad"
+              step="any"
+              min="0"
+              class="input"
+            />
+          </li>
+          <li class="Calculo__items">
+            Galonaje (Gal/min)
+            <input
+              type="number"
+              id="Galonaje"
+              step="any"
+              min="0"
+              class="input"
+            />
+          </li>
+          <li class="Calculo__items">
+            Viscosidad (CP)
+            <input
+              type="number"
+              id="viscosidad"
+              step="any"
+              min="0"
+              class="input"
+            />
+          </li>
+          <li class="Calculo__items">
+            Longitud (pies)
+            <input
+              type="number"
+              id="Longitud"
+              step="any"
+              min="0"
+              class="input"
+            />
+          </li>
+          <li class="Calculo__items">
+            Diámetro interno (tuberia o collar) (pulgadas)
+            <input
+              type="number"
+              id="Diametro1"
+              step="any"
+              min="0"
+              class="input"
+            />
+          </li>
+          <li class="Calculo__items">
+            Numero de boquillas
+            <input
+              type="number"
+              id="Nboquillas"
+              step="any"
+              min="0"
+              class="input"
+            />
+          </li>
+          <li class="Calculo__items">
+            Diametro de las boquillas
+            <input
+              type="number"
+              id="AreaBoquillas"
+              step="any"
+              min="0"
+              class="input"
+            />
+          </li>
+          <li class="Calculo__items">
+            Diametro exterior de la tuberia de perforación o collar (in)
+            <input
+              type="number"
+              id="DiametroexternoTP"
+              step="any"
+              min="0"
+              class="input"
+            />
+          </li>
+          <li class="Calculo__items">
+            Diametro interior del pozo o tuberia de revestimiento (in)
+            <input
+              type="number"
+              id="DiametroInternoPoso"
+              step="any"
+              min="0"
+              class="input"
+            />
+          </li>
+          <li class="Calculo__items" id="resultado"></li>
+          <li class="Calculo__items" id="resultado2"></li>
+          <li class="Calculo__items" id="resultado3"></li>
+          <li class="Calculo__items" id="resultado4"></li>
+          <li class="Calculo__items" id="resultado5"></li>
+          <input
+            class="boton"
+            type="button"
+            id="resultado"
+            value="Calcular numero de reynolds "
+            onclick="Reynolds()"
+          />
+          <p class="parrafo">
+            Si el numero de reynolds es mayor a 2100 el Flujo es turbulento ,
+            usar formulas 1 y 2<br /><br />
+          </p>
+          <p class="parrafo">
+            Si el numero de renolds es menor a 2100 es Flujo laminar y se usan
+            las formulas 4 y 5
+          </p>
+        </ul>
+      </section>
+    </main>
+  </body>
+</html>
