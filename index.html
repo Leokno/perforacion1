@@ -56,6 +56,10 @@
             />
           </li>
           <li class="Calculo__items">
+            Cd coeficiente de la broca
+            <input type="number" id="Cd" step="any" min="0" class="input" />
+          </li>
+          <li class="Calculo__items">
             Diámetro interno (tuberia o collar) (pulgadas)
             <input
               type="number"
@@ -76,7 +80,7 @@
             />
           </li>
           <li class="Calculo__items">
-            Diametro de las boquillas
+            Diametro de las boquillas X/32 (poner el X)
             <input
               type="number"
               id="AreaBoquillas"
@@ -110,11 +114,12 @@
           <li class="Calculo__items" id="resultado3"></li>
           <li class="Calculo__items" id="resultado4"></li>
           <li class="Calculo__items" id="resultado5"></li>
+          <li class="Calculo__items" id="resultado6"></li>
           <input
             class="boton"
             type="button"
             id="resultado"
-            value="Calcular numero de reynolds "
+            value="Calcular"
             onclick="Reynolds()"
           />
           <p class="parrafo">
@@ -125,6 +130,34 @@
             Si el numero de renolds es menor a 2100 es Flujo laminar y se usan
             las formulas 4 y 5
           </p>
+        </ul>
+      </section>
+      <section class="Calculo">
+        <ul class="container">
+          <h1 class="Titulo">Formulas utilizadas</h1>
+          <h2 class="subtitulo">numero de reynolds y factor de fricción</h2>
+          <img src="/img/formula 1.png" alt="formula 1" class="imagen" />
+          <h2 class="subtitulo">
+            Perdida de presion en tuberias de perforación o collares flujo
+            laminar
+          </h2>
+          <img src="/img/tuberiasfl.png" alt="formula 2" class="imagen" />
+          <h2 class="subtitulo">
+            perdida de presion tuberias o collares flujo turbulento
+          </h2>
+          <img src="/img/tuberia.png" alt="formula 3" class="imagen" />
+          <h2 class="subtitulo">Perdida de presion anular flujo Laminar</h2>
+          <img src="/img/anular.png" alt="formula 4" class="imagen" />
+          <h2 class="subtitulo">
+            Perdida de presion en anular flujo turbulento
+          </h2>
+          <img
+            src="/img/Captura de pantalla 2023-06-12 151424.png"
+            alt="formula 5"
+            class="imagen"
+          />
+          <h2 class="subtitulo">Perdida de presion en la broca</h2>
+          <img src="/img/brocas.png" alt="formula 6" class="imagen" />
         </ul>
       </section>
     </main>

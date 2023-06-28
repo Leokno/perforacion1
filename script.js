@@ -2,17 +2,30 @@ function Reynolds() {
   const Galonaje = parseFloat(document.getElementById("Galonaje").value);
   const Densidad = parseFloat(document.getElementById("Densidad").value);
   const Diametro = parseFloat(document.getElementById("Diametro1").value);
+  const viscosidad = parseFloat(document.getElementById("viscosidad").value);
+  const Longitud = parseFloat(document.getElementById("Longitud").value);
+  const Cd = parseFloat(document.getElementById("Cd").value);
+  const Areaboquilla = parseFloat(
+    document.getElementById("AreaBoquillas").value
+  );
+  const NumeroBoquillas = parseFloat(
+    document.getElementById("Nboquillas").value
+  );
+
+  const De = NumeroBoquillas * ((Areaboquilla * Areaboquilla) / 32);
   const DiametroexternoTP = parseFloat(
     document.getElementById("DiametroexternoTP").value
   );
   const DiametroInternoPoso = parseFloat(
     document.getElementById("DiametroInternoPoso").value
   );
-  const viscosidad = parseFloat(document.getElementById("viscosidad").value);
-  const Longitud = parseFloat(document.getElementById("Longitud").value);
+
   const velocidad = Galonaje / (2.45 * (Diametro * Diametro));
   const Re = (928 * (Densidad * velocidad * Diametro)) / viscosidad;
   const FactorDeFriccion = 0.0791 / Math.pow(Re, 0.25);
+
+  const perdidaBroca =
+    ((0.000135 * Densidad * (Galonaje * Galonaje)) / (Cd * Cd)) * (De * De);
 
   const PerdidatuberiaT =
     ((FactorDeFriccion * (velocidad * velocidad) * Densidad) /
@@ -43,21 +56,24 @@ function Reynolds() {
 
   if (Re > 2100) {
     document.getElementById("resultado3").innerHTML =
-      "La perdida de presion con en la tuveria con es: " +
+      "La perdida de presión con en la tubería con es: " +
       PerdidatuberiaT.toFixed(11) +
-      " PSI  (Flujo turbulento)";
+      " LPC  (Flujo turbulento)";
     document.getElementById("resultado4").innerHTML =
-      "La perdida de presion en el anular es:" +
+      "La perdida de presión en el anular es:" +
       AnularL.toFixed(3) +
-      "PSI (Flujo laminar)";
+      " LPC (Flujo laminar)";
   } else {
     document.getElementById("resultado3").innerHTML =
-      "la perdida de presion en la tuveria es: " +
+      "la perdida de presión en la tubería es: " +
       PerdidatuberiaL.toFixed(11) +
-      "PSI (Flujo Laminar)";
+      " LPC (Flujo Laminar)";
     document.getElementById("resultado4").innerHTML =
-      "La perdida de presion en el anular es: " +
+      "La perdida de presión en el anular es: " +
       AnularT.toFixed(3) +
-      "PSI (Flujo turbulento)";
+      " LPC (Flujo turbulento)";
   }
+
+  document.getElementById("resultado5").innerHTML =
+    "la perdida de presión en la broca es: " + perdidaBroca.toFixed(3) + " LPC";
 }
