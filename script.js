@@ -56,8 +56,8 @@ function Reynolds() {
 
   if (Re > 2100) {
     document.getElementById("resultado3").innerHTML =
-      "La perdida de presión con en la tubería con es: " +
-      PerdidatuberiaT.toFixed(11) +
+      "La perdida de presión con en la tubería es: " +
+      PerdidatuberiaT.toFixed(3) +
       " LPC  (Flujo turbulento)";
     document.getElementById("resultado4").innerHTML =
       "La perdida de presión en el anular es:" +
@@ -66,11 +66,11 @@ function Reynolds() {
   } else {
     document.getElementById("resultado3").innerHTML =
       "la perdida de presión en la tubería es: " +
-      PerdidatuberiaL.toFixed(11) +
+      PerdidatuberiaL.toFixed(3) +
       " LPC (Flujo Laminar)";
     document.getElementById("resultado4").innerHTML =
       "La perdida de presión en el anular es: " +
-      AnularT.toFixed(3) +
+      AnularT.toFixed(5) +
       " LPC (Flujo turbulento)";
   }
 
