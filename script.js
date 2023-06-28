@@ -12,7 +12,7 @@ function Reynolds() {
     document.getElementById("Nboquillas").value
   );
 
-  const De = NumeroBoquillas * ((Areaboquilla * Areaboquilla) / 32);
+  const De = NumeroBoquillas * (Areaboquilla / 32);
   const DiametroexternoTP = parseFloat(
     document.getElementById("DiametroexternoTP").value
   );
@@ -20,7 +20,11 @@ function Reynolds() {
     document.getElementById("DiametroInternoPoso").value
   );
 
+  const D22 = Math.pow(DiametroInternoPoso, 2);
+  const D11 = Math.pow(DiametroexternoTP, 2);
+
   const velocidad = Galonaje / (2.45 * (Diametro * Diametro));
+  const velocidad2 = Galonaje / (2.45 * (Math.pow(D22, 2) - Math.pow(D11, 2)));
   const Re = (928 * (Densidad * velocidad * Diametro)) / viscosidad;
   const FactorDeFriccion = 0.0791 / Math.pow(Re, 0.25);
 
@@ -36,7 +40,7 @@ function Reynolds() {
     ((viscosidad * velocidad) / (1500 * (Diametro * Diametro))) * Longitud;
 
   const AnularL =
-    (viscosidad * velocidad) /
+    (viscosidad * velocidad2) /
     (1500 *
       (DiametroInternoPoso * DiametroInternoPoso +
         DiametroexternoTP * DiametroexternoTP -
@@ -44,7 +48,7 @@ function Reynolds() {
           Math.log(DiametroexternoTP / DiametroInternoPoso)));
 
   const AnularT =
-    ((FactorDeFriccion * Math.pow(velocidad, 2) * Densidad * Longitud) /
+    ((FactorDeFriccion * Math.pow(velocidad2, 2) * Densidad * Longitud) /
       92.916) *
     (DiametroInternoPoso - DiametroexternoTP);
 
@@ -61,16 +65,16 @@ function Reynolds() {
       " LPC  (Flujo turbulento)";
     document.getElementById("resultado4").innerHTML =
       "La perdida de presión en el anular es:" +
-      AnularL.toFixed(5) +
+      AnularL.toFixed(8) +
       " LPC (Flujo laminar)";
   } else {
     document.getElementById("resultado3").innerHTML =
       "la perdida de presión en la tubería es: " +
-      PerdidatuberiaL.toFixed(3) +
+      PerdidatuberiaL.toFixed(5) +
       " LPC (Flujo Laminar)";
     document.getElementById("resultado4").innerHTML =
       "La perdida de presión en el anular es: " +
-      AnularT.toFixed(5) +
+      AnularT.toFixed(8) +
       " LPC (Flujo turbulento)";
   }
 
