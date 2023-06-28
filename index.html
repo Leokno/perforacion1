@@ -13,8 +13,12 @@
       <section class="Calculo">
         <ul class="container">
           <h1 class="Titulo">
-            Calcular número de Reynolds y factor de fricción
+            Calcular perdidas de presión con modelo Newtoniano <br /><br />
           </h1>
+          <p class="subtitulo1">
+            Rellenar los datos en el recuadro azul oscuro
+          </p>
+          <h2 class="subtitulo">Datos generales</h2>
           <li class="Calculo__items">
             Densidad (Lbm/Gal)
             <input
@@ -46,31 +50,22 @@
             />
           </li>
           <li class="Calculo__items">
-            Longitud (pies)
+            Diámetro interno del pozo (pulgadas)
             <input
               type="number"
-              id="Longitud"
+              id="DiametroInternoPoso"
               step="any"
               min="0"
               class="input"
             />
           </li>
+          <h2 class="subtitulo">Datos de la broca</h2>
           <li class="Calculo__items">
             Cd coeficiente de la broca
             <input type="number" id="Cd" step="any" min="0" class="input" />
           </li>
           <li class="Calculo__items">
-            Numero de boquillas
-            <input
-              type="number"
-              id="Nboquillas"
-              step="any"
-              min="0"
-              class="input"
-            />
-          </li>
-          <li class="Calculo__items">
-            Diametro de las boquillas X/32 pulgadas (poner el X)
+            Diámetro de las boquillas X/32 pulgadas (poner el X)
             <input
               type="number"
               id="AreaBoquillas"
@@ -79,8 +74,9 @@
               class="input"
             />
           </li>
+          <h2 class="subtitulo">Datos de los Drill pipe</h2>
           <li class="Calculo__items">
-            Diámetro interno (tuberia o collar) (pulgadas)
+            Diámetro interno Drill pipe (pulgadas)
             <input
               type="number"
               id="Diametro1"
@@ -90,7 +86,7 @@
             />
           </li>
           <li class="Calculo__items">
-            Diametro externo de la tuberia de perforación o collar (pulgadas)
+            Diámetro externo Drill pipe (pulgadas)
             <input
               type="number"
               id="DiametroexternoTP"
@@ -100,21 +96,43 @@
             />
           </li>
           <li class="Calculo__items">
-            Diametro interno del pozo o tuberia de revestimiento (pulgadas)
+            Número de Drill pipes (pulgadas)
+            <input type="number" id="NDP" step="any" min="0" class="input" />
+          </li>
+          <h2 class="subtitulo">Datos de los Drill Collar</h2>
+          <li class="Calculo__items">
+            Diámetro interno Drill Collar (pulgadas)
             <input
               type="number"
-              id="DiametroInternoPoso"
+              id="Diametro2"
               step="any"
               min="0"
               class="input"
             />
           </li>
+          <li class="Calculo__items">
+            Diámetro externo Drill Collar (pulgadas)
+            <input type="number" id="DEDC" step="any" min="0" class="input" />
+          </li>
+
+          <li class="Calculo__items">
+            Número de Drill collars (pulgadas)
+            <input type="number" id="NDC" step="any" min="0" class="input" />
+          </li>
+
+          <h2 class="subtitulo">Cálculos de perdida de presión</h2>
+          <p class="subtitulo1">
+            Después de rellenar los campos requeridos , presionar el botón de
+            "Calcular" para realizar los cálculos.
+          </p>
+
           <li class="Calculo__items" id="resultado"></li>
           <li class="Calculo__items" id="resultado2"></li>
           <li class="Calculo__items" id="resultado3"></li>
           <li class="Calculo__items" id="resultado4"></li>
           <li class="Calculo__items" id="resultado5"></li>
           <li class="Calculo__items" id="resultado6"></li>
+          <li class="Calculo__items" id="resultado7"></li>
           <input
             class="boton"
             type="button"
@@ -144,17 +162,9 @@
           <h2 class="subtitulo">
             perdida de presion tuberias o collares flujo turbulento
           </h2>
-          <img src="/img/tuberia.png" alt="formula 3" class="imagen" />
+          <img src="/img/turbulento.png" alt="formula 3" class="imagen" />
           <h2 class="subtitulo">Perdida de presion anular flujo Laminar</h2>
           <img src="/img/anular.png" alt="formula 4" class="imagen" />
-          <h2 class="subtitulo">
-            Perdida de presion en anular flujo turbulento
-          </h2>
-          <img
-            src="/img/Captura de pantalla 2023-06-12 151424.png"
-            alt="formula 5"
-            class="imagen"
-          />
           <h2 class="subtitulo">Perdida de presion en la broca</h2>
           <img src="/img/brocas.png" alt="formula 6" class="imagen" />
         </ul>
