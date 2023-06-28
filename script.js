@@ -61,7 +61,7 @@ function Reynolds() {
       " LPC  (Flujo turbulento)";
     document.getElementById("resultado4").innerHTML =
       "La perdida de presión en el anular es:" +
-      AnularL.toFixed(3) +
+      AnularL.toFixed(5) +
       " LPC (Flujo laminar)";
   } else {
     document.getElementById("resultado3").innerHTML =
